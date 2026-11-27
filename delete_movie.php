@@ -1,0 +1,1 @@
+<?php require __DIR__.'/includes/bootstrap.php';logged();$id=movie_id();$m=movie($id);if($_SERVER['REQUEST_METHOD']==='POST'){csrf();$s=$db->prepare('DELETE FROM movies WHERE Movie_id=?');$s->execute([$id]);go('list-movies.php');}render('delete.twig',['movie'=>$m]);
